@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import RootStore from './stores/'
+import { Provider } from 'mobx-react'
 
+const context = createContext ({
+  
+})
+{/* 通过context传递给子组件 */} 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider {...new RootStore()}>
+      <App />
+    </Provider>,
   document.getElementById('root')
 );
 
